@@ -4,7 +4,8 @@ block content
    
   div.container
 
-      h1(class="title is-1") Contacto  
+      h1(class="title is-1") Contacto 
+      p= title 
 
       form(name="miformulario" action="/confirmacion" method="POST" enctype="multipart/form-data" )
       
@@ -43,3 +44,13 @@ block content
               
               div.control
                   button.button.is-text Cancel
+      p hola mundo
+      
+      p= images
+      each image in images
+          input(type="radio" id="uno" name="seleccion") 
+          label(for="uno") imagen
+          img(src= image width='300')
+          br
+            
+      //img(src='/done/photo-1565286093825.png')
