@@ -1,0 +1,17 @@
+UseCaseDiagram [frame=true framecolor=steelblue label="Usecase Diagram"] {
+  attribute usecase [fillcolor=paleturquoise]
+  actor a as "Administrator"
+  actor c as "Customer"
+  system s as "FDR system" [fillcolor=whitesmoke] {
+    usecase u1 as "Upload Image" 
+    usecase u2 as "Set product" 
+    usecase u5 as "Read log"
+    usecase u3 as "Deposit" 
+    usecase u4 as "Register ATM" 
+  }
+  actor b as "Bank" [icon=university]
+
+  a "1" -- "0..1" u1
+  a "1" -- "0..1" u2
+
+}

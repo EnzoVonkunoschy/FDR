@@ -1,0 +1,47 @@
+extends layout
+
+block content
+    script.
+        //alert('Hola mundo')
+        console.log('Script vinculado')
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('fileX').addEventListener('change', function(event) {
+            if (event.target.files.length > 0) {
+                console.log('Archivo seleccionado:', event.target.files[0].name);
+                document.getElementById('indicador').innerText = event.target.files[0].name;
+            } else {
+                console.log('No se ha seleccionado ningún archivo.');
+            }
+            });
+        });
+
+
+    div.container
+
+      h1(class="title is-1") Fiambrería del Rosario 
+      p= title 
+      p carga de imágenes
+
+      form(name="miformulario" action="/confirmacion" method="POST" enctype="multipart/form-data" )
+      
+        div.field
+
+        div.file
+            label.file-label
+                input.file-input(type="file" name="photo" id="fileX")
+                span.file-cta
+                    span.file-icon
+                    i.fas.fa-upload
+                    span.file-label(id="indicador") &nbsp;&nbsp;Selecciona un archivo...
+                    //span.file-name
+
+        br
+        div.field.is-grouped
+            div.control
+                button.button.is-link Submit
+              
+        div.control
+            button.button.is-text Cancel
+      
+      
+
