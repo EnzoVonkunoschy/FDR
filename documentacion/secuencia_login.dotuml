@@ -1,0 +1,14 @@
+SequenceDiagram [frame=true label='Login'] {
+lifeline bro
+lifeline app
+lifeline seq
+
+bro --> app "get"
+bro <-- app "login/html"
+
+
+
+//Hacer plantilla login html
+
+
+}
