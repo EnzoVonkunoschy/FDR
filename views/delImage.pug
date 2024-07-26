@@ -1,0 +1,25 @@
+extends layout
+
+block content
+   
+  div.container
+
+      h1(class="title is-1") Contacto 
+      p= title 
+
+      label Formulario de Eliminación de imágenes
+      form(action="/eliminarimagen" method="POST")
+        
+        each image in images
+            input(type="radio" id="uno" name="eliminar" value=image) 
+            label(for="uno") imagen
+            img(src= image width='300')
+            br
+        div.field.is-grouped
+            div.control
+                button.button.is-link.is-danger Eliminar
+            
+            div.control
+                button.button.is-lind.is-info(onclick="window.location.href='/administracion'") Cancel
+
+      //img(src='/done/photo-1565286093825.png')

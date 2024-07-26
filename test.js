@@ -26,4 +26,14 @@ function dameImagenes(){
 //console.log(files);
 
 dameImagenes();
-module.exports = {getFilesSync, dameImagenes}
+
+function eliminarImagen(arg){
+    fs.unlink(path.normalize(arg), (err) => {
+        if (err) throw err;
+        console.log('path/file.txt was deleted');
+      });
+}
+
+//eliminarImagen();
+
+module.exports = {getFilesSync, dameImagenes, eliminarImagen}
