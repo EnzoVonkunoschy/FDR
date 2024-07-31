@@ -1,0 +1,22 @@
+ClassDiagram [frame= true framecolor=steelblue label='Diagrama de clases']{
+class Producto{
+nombre: string
+descripcion: string
+varidad: '[string]'
+imagen: Imagen
+}
+
+class Imagen{
+    ruta:string
+    getImagenServer():string
+    getImagenVista():string
+}
+
+Producto "1" --> "1" Imagen : "uno a uno"
+
+class Catalogo{
+    productos : '[Producto]'
+}
+
+Catalogo "1" --> "n" Producto
+}
